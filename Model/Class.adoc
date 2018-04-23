@@ -1,0 +1,11 @@
+=== Popis
+Toto je diagram tříd
+
+=== Model
+
+[plantuml, "Class-diagram", png]
+....
+class Vlak
+class Úsek
+class MTB
+....

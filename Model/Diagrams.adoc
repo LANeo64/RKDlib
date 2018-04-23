@@ -1,0 +1,5 @@
+= Model programu knihovny
+Popis sestává z diagramu tříd a ???
+
+== Diagram tříd
+include::Class.adoc[]
