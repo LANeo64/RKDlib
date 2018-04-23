@@ -30,4 +30,4 @@ pro zobrazení diagramů v html můžete použít Github Preview
 [https://htmlpreview.github.io/](https://htmlpreview.github.io/)
 
 Konkrétní modely
-* [Základní model](https://htmlpreview.github.io/?https://github.com/LANeo64/RKDlib/blob/master/Model/Diagrams.html)
+* [Základní model](https://htmlpreview.github.io/?https://github.com/LANeo64/RKDlib/blob/master/Model/Diagrams.html){:target="_blank"}
