@@ -1,0 +1,41 @@
+[plantuml, "Class-train", png]
+....
+'###############################################################################
+' definice tříd zde
+'###############################################################################
+
+class Vlak {
+	- adresa: int
+	- nazev: string
+	- majitel: string
+	- oznaceni: string
+	- poznamka: string
+	- trida: LokoClass
+	- funkce_nazev: string[29]
+	- stav: Stav
+}
+
+class Stav {
+	- rychlostStupne: int
+	- rychlostKmph: int
+	-	smer: bool
+	- stavFunkci: bool[29]
+	- stanoviste: string
+	- najetoVpred: Najeto
+	- najetoVzad: Najeto
+}
+
+class Najeto {
+	- metry: double
+	- bloky: int
+}
+
+'###############################################################################
+' poznámky k třídám
+'###############################################################################
+
+
+'###############################################################################
+' linky, asociace, agregace, kompozice a dědičnosti zde
+'###############################################################################
+....

@@ -2,10 +2,9 @@
 Toto je diagram tříd
 
 === Model
-
-[plantuml, "Class-diagram", png]
-....
-class Vlak
-class Úsek
-class MTB
-....
+==== Traťové rozdělení
+include::Class_trat.adoc[]
+==== Pomocné typy
+include::Class_util.adoc[]
+==== Vozidla
+include::Class_train.adoc[]

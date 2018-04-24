@@ -1,0 +1,61 @@
+[plantuml, "Class-util", png]
+....
+'###############################################################################
+' definice tříd zde
+'###############################################################################
+
+enum TraťovýTyp {
+	vyhybka
+	usek
+  tratUsek
+  scom
+	zamek
+	ir
+	rozpojovac
+	trat
+	uvazka
+}
+
+enum ZámekVal {
+	positive
+	negative
+}
+
+enum LokoClass {
+	parni
+	diesel
+	motor
+	elektro
+}
+
+class MTB {
+	- board: int
+	- port: int
+	+ MTB()
+	+ operator=(arg:MTB&): MTB&
+	+ board(int):int
+	+ port(int):int
+}
+
+class BlokStav {
+	- stav: bool
+	- sekce: bool[]
+	- napajeni: bool
+	- zkrat: bool
+	- dcc: bool
+	- soupravy: string[]
+}
+
+'###############################################################################
+' poznámky k třídám
+'###############################################################################
+
+note bottom of ZámekVal
+	hodnota v json je
+	typu "+" a "-"
+end note
+
+'###############################################################################
+' linky, asociace, agregace, kompozice a dědičnosti zde
+'###############################################################################
+....

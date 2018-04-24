@@ -1,0 +1,79 @@
+[plantuml, "Class-trat", png]
+....
+'###############################################################################
+' definice tříd zde
+'###############################################################################
+abstract class TraťovýObjekt{
+	- název: string
+	- id: int
+	- typ: TraťovýTyp
+}
+
+class Výhybka {
+	- input+: MTB
+  - input-: MTB
+  - output+: MTB
+  - output-: MTB
+	- úsek: int
+	- spojka: int
+	- zámek: int
+	- zamekPoloha: ZámekVal
+}
+
+class Úsek {
+	- mtb: std::vector<MTB>
+	- délka: int
+	- zesilovač: string
+}
+
+class TraťovýÚsek {
+  - mtb: std::vector<MTB>
+	- délka: int
+	- zesilovač: string
+	- smyckaUsek: bool
+}
+
+class SCOM {
+
+}
+
+class Zámek {
+
+}
+
+class IR {
+	- mtb: MTB
+}
+
+class Rozpojovač {
+
+}
+
+class Trať {
+
+}
+
+class Uvazka {
+
+}
+
+'###############################################################################
+' poznámky k třídám
+'###############################################################################
+
+
+'###############################################################################
+' linky, asociace, agregace, kompozice a dědičnosti zde
+'###############################################################################
+
+TraťovýObjekt <|-- Výhybka
+TraťovýObjekt <|-- Úsek
+TraťovýObjekt <|-- TraťovýÚsek
+TraťovýObjekt <|-- SCOM
+TraťovýObjekt <|-- Zámek
+TraťovýObjekt <|-- IR
+TraťovýObjekt <|-- Rozpojovač
+TraťovýObjekt <|-- Trať
+TraťovýObjekt <|-- Uvazka
+
+....
