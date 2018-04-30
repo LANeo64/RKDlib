@@ -10,7 +10,7 @@ class Kolejiste {
 	+ getVlak(id:int):Vlak
 }
 
-static class HTTP_klient {
+class HTTP_klient {
 	- 95.173.69.9:5823
 }
 
