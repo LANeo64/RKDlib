@@ -5,8 +5,8 @@
 '###############################################################################
 
 class Kolejiste {
-	- bloky: std::vector<TraťovýPrvek>
-	- vlaky: std::vector<Vlak>
+	- m_bloky: std::vector<TraťovýPrvek>
+	- m_vlaky: std::vector<Vlak>
 	+ getVlak(id:int):Vlak
 }
 
