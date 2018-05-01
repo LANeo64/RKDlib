@@ -31,9 +31,12 @@
 *.out
 *.app
 
-nbproject/private/
-build/
-nbbuild/
-dist/
-nbdist/
-.nb-gradle/
+# Code/nbproject/private/
+Code/nbproject/
+Code/build/
+Code/nbbuild/
+Code/dist/
+Code/nbdist/
+Code/.nb-gradle/
+Code/.dep.inc
+Code/MakeFile
