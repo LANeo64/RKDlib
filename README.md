@@ -1,7 +1,8 @@
 # RKDlib
 Knihovna v jazyce C++ pro řízení modelového kolejiště Mendelu
 ## Models & tools
-K modelování používáme AsciiDoctor a AsciiDoctor-Diagram
+K modelování používáme AsciiDoctor a AsciiDoctor-Diagram.
+
 Využíváme wrapper knihovu [cURLpp](http://www.curlpp.org/) okolo [curl/libcurl](https://curl.haxx.se/download.html).
 ### Jak na Asciidoctor
 * Instalace
