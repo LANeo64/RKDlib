@@ -267,5 +267,114 @@ QuickJson* QuickJson::ParseString( const char* str ) {
 
 QuickJson* QuickJson::ParseString( std::string str ) {
     int len = str.length();
-    return NULL;
+    
+    // TO DO !!!!
+    
+    if( m_rootNode ) {
+        r.echo("deleting root");
+        delete m_rootNode;
+    }
+    r.echo("new root");
+    m_rootNode = new QuickXmlNode();
+    int size = m_xmlStream.size();
+    int pos = 0;
+    char c;
+    std::string name = "";
+    std::string value = "";
+    QuickXmlNode* child = NULL;
+    QuickXmlNode* activeNode = NULL;
+    bool inHead = false;
+    bool inNode = false;
+    bool inAttr = false;
+    bool inValue = false;
+    
+    r.echo("done setup");
+    r.echo(m_xmlStream);
+    
+    while( pos < size ) {
+        c = m_xmlStream[pos];
+        r.echo("cycling",c);
+        r.echo("flags",inHead*1000+inNode*100+inAttr*10+inValue);
+        //r.echo(c);
+        if( !inHead && !inNode && !inAttr && !inValue ){ // start
+            if( c == '<' ) {
+                if( m_header.size() == 0 ) {
+                    inHead = true;
+                    m_header.append(1,c);
+                } else {
+                    inNode = true;
+                    activeNode = m_rootNode;
+                    name.clear();
+                    value.clear();
+                }
+            }
+        } else if( inHead && !inNode && !inAttr && !inValue ) { // head
+            if( c == '>' ) {
+                inHead = false;
+            }
+            m_header.append(1,c);
+        } else if( !inHead && inNode && !inAttr && !inValue ){ // node
+            if( c == ' ' ) {
+                if( activeNode->getName().size() == 0 ) {
+                    activeNode->setName( name );
+                    name.clear();
+                }
+                inAttr = true;
+            } else if( c == '>' ){
+                if( activeNode->getName().size() == 0 ) {
+                    activeNode->setName( name );
+                    //name.clear();
+                } else if( activeNode->getName().compare(name) == 0 ) {
+                    if(activeNode != m_rootNode ){
+                        activeNode = activeNode->getParent();
+                    }
+                    //name.clear();
+                }
+                name.clear();
+                inValue = true;
+            } else if( c == '/' ) {
+                name.clear();
+            } else {
+                name.append(1,c);
+            }
+        } else if( !inHead && inNode && inAttr && !inValue ){ // node attribute
+            if( c == '=' ) {
+                inValue = true;
+            } else {
+                name.append(1,c);
+            }
+        } else if( !inHead && inNode && !inAttr && inValue ){ // node value
+            if( c == '<' ) {
+                if( value.size() > 0 ) {
+                    activeNode->setValue( value );
+                    value.clear();
+                    //konec nody
+                } else if( m_xmlStream[pos+1] != '/'){
+                    child = new QuickXmlNode( activeNode );
+                    activeNode->addChild( child );
+                    activeNode = child;
+                }
+                inValue = false;
+            } else if(( c != '\r' ) && ( c != '\n' ) && ( c != '\t' ) && ( c != ' ' )) {
+                value.append(1,c);
+            } else if( value.size() != 0 ){
+                value.append(1,c);
+            }
+        } else if( !inHead && inNode && inAttr && inValue ){ // node attribute value
+            if( c == '"' ) {
+                if( value.size() > 0 ) {
+                    inValue = false;
+                    inAttr = false;
+                    activeNode->addAttribute( name, value );
+                    name.clear();
+                    value.clear();
+                }
+            } else {
+                value.append(1,c);
+            }
+        }
+        pos++;
+    }
+    m_xmlStream.clear();
+    return m_rootNode;
 }
