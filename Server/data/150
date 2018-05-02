@@ -1,0 +1,16 @@
+{
+	"blokStav": {
+		"stav": "obsazeno",
+		"sekce": [
+			"obsazeno",
+			"obsazeno",
+			"obsazeno"
+		],
+		"napajeni": true,
+		"zkrat": false,
+		"dcc": true,
+		"soupravy": [
+			"504220"
+		]
+	}
+}
