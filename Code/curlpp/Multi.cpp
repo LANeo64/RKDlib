@@ -22,9 +22,13 @@
  */
 
 
-#include "curlpp/Easy.hpp"
-#include "curlpp/Exception.hpp"
-#include "curlpp/Multi.hpp"
+//#include "curlpp/Easy.hpp"
+//#include "curlpp/Exception.hpp"
+//#include "curlpp/Multi.hpp"
+
+#include "Easy.hpp"
+#include "Exception.hpp"
+#include "Multi.hpp"
 
 
 curlpp::Multi::Multi()

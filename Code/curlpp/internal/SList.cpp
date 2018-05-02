@@ -1,4 +1,6 @@
-#include "curlpp/internal/SList.hpp"
+//#include "curlpp/internal/SList.hpp"
+
+#include "SList.hpp"
 
 #include <ostream>
 #include <string>

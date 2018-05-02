@@ -21,10 +21,15 @@
 *    SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 */
 
-#include "curlpp/internal/CurlHandle.hpp"
+//#include "curlpp/internal/CurlHandle.hpp"
 
-#include "curlpp/cURLpp.hpp"
-#include "curlpp/Exception.hpp"
+//#include "curlpp/cURLpp.hpp"
+//#include "curlpp/Exception.hpp"
+
+#include "CurlHandle.hpp"
+
+#include "../cURLpp.hpp"
+#include "../Exception.hpp"
 
 #include <string>
 #include <iostream>

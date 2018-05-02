@@ -21,7 +21,8 @@
 *    SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 */
 
-#include "curlpp/Exception.hpp"
+//#include "curlpp/Exception.hpp"
+#include "Exception.hpp"
 
 curlpp::RuntimeError::~RuntimeError() throw()
 {}

@@ -21,8 +21,11 @@
 *    SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 */
 
-#include "curlpp/internal/CurlHandle.hpp"
-#include "curlpp/internal/OptionSetter.hpp"
+//#include "curlpp/internal/CurlHandle.hpp"
+//#include "curlpp/internal/OptionSetter.hpp"
+
+#include "CurlHandle.hpp"
+#include "OptionSetter.hpp"
 
 #include <string>
 #include <iostream>

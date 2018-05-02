@@ -21,7 +21,9 @@
  *    SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
  */
 
-#include "curlpp/internal/OptionList.hpp"
+//#include "curlpp/internal/OptionList.hpp"
+
+#include "OptionList.hpp"
 
 #include <iostream>
 

@@ -1,6 +1,7 @@
-#include "curlpp/internal/SList.hpp"
-
-#include "curlpp/Info.hpp"
+//#include "curlpp/internal/SList.hpp"
+#include "internal/SList.hpp"
+//#include "curlpp/Info.hpp"
+#include "Info.hpp"
 
 #include <string>
 #include <list>

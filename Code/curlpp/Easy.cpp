@@ -22,8 +22,10 @@
  */
 
 
-#include "curlpp/Easy.hpp"
-#include "curlpp/Options.hpp"
+//#include "curlpp/Easy.hpp"
+#include "Easy.hpp"
+#include "Options.hpp"
+//#include "curlpp/Options.hpp"
 
 
 #include <memory>

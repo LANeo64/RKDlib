@@ -22,23 +22,18 @@
  */
 
 
-#include "curlpp/OptionBase.hpp"
+//#include "curlpp/Options.hpp"
+//#include "curlpp/Easy.hpp"
 
-curlpp::OptionBase::OptionBase(CURLoption option)
-  : mOption(option)
-{};
+#include "Options.hpp"
+#include "Easy.hpp"
 
-curlpp::OptionBase::~OptionBase()
-{};
-
-bool curlpp::OptionBase::operator<(const curlpp::OptionBase & rhs) const 
+std::ostream & operator<<(std::ostream & stream, const curlpp::options::Url & url)
 {
-   return mOption < rhs.mOption;
+  curlpp::Easy request;
+  request.setOpt(url);
+
+  stream << request;
+
+  return stream;
 }
-
-CURLoption curlpp::OptionBase::getOption() const 
-{
-   return mOption;
-}
-
-
