@@ -7,10 +7,14 @@
 
 #include "MTB.hpp"
 
-MTB::MTB() {
+MTB::MTB( int board, int port ) {
+    m_port = port;
+    m_board = board;
 }
 
 MTB::MTB(const MTB& orig) {
+    m_port = orig.m_port;
+    m_board = orig.m_board;
 }
 
 MTB::~MTB() {

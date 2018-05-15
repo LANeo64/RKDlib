@@ -10,10 +10,12 @@
 
 class MTB {
 public:
-    MTB();
+    MTB( int board, int port );
     MTB(const MTB& orig);
     virtual ~MTB();
 private:
+    int m_port;
+    int m_board;
 
 };
 
