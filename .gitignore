@@ -42,3 +42,7 @@ Code/.dep.inc
 Code/MakeFile
 
 RKDdummyServer/nbproject/
+*.project
+*.xml
+*.iml
+*.cproject
