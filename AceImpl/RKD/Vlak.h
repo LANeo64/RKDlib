@@ -6,6 +6,8 @@
 #define VLAK_H
 #include "Includes.h";
 #include "VlakStav.h";
+#include "LokoClass.h";
+#include "FuncKey.h";
 
 class Vlak 
 {
@@ -15,23 +17,28 @@ private:
 	string m_majitel;
 	string m_oznaceni;
 	string m_poznamka;
-	//LokoClass m_trida;
-	//std::map<FuncKey, string> m_funkce_nazev
+	LokoClass m_trida;
+	std::map<FuncKey, string> m_funkce_nazev;
 	VlakStav* m_stav;
+	
 
 public:
-	Vlak(int add, string nazev, string majitel, string oznaceni, string trida);
+	Vlak(int add, string nazev, string majitel, string oznaceni, LokoClass trida, VlakStav* stav);
 	~Vlak();
 
-	void setNote(string note);
+	void setPoznamka(string poznamka);
 
 	void setStav(VlakStav* stav);
 	VlakStav* GetStav();
 	
-	//void setFuncName(FuncKey key, string name);
-	//string getFuncName(FuncKey key);
+	void inicFuncName();
+	void setFuncName(FuncKey key, string name);
+	string getFuncName(FuncKey key);
 
 	int getAddress();
+
+	void printConsole();
+
 };
 
 
