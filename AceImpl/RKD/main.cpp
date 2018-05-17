@@ -5,12 +5,13 @@ Created by Ace_Liver, 2018.
 
 #include <iostream>;
 #include "VlakStav.h"
+#include "Vlak.h";
+#include "LokoClass.h";
 
 using namespace std;
 
 int main()
 {
-	//cout << "Hellow" << endl;
 	VlakStav* vl = new VlakStav(4,50,true,"oranzova");
 	vl->printInfoConsole();
 	vl->setFunction(5, true);
@@ -24,6 +25,10 @@ int main()
 	vl->setSpeedStupne(2);
 	vl->setSmer(false);
 	vl->printInfoConsole();
+
+	Vlak* vlacek = new Vlak(101110, "OS48501", "Ace", "nejake oznaceni", parni, vl);
+	vlacek->setPoznamka("slusuje");
+	vlacek->printConsole();
 
 	system("pause");	
 	return 0;
