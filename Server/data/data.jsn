@@ -1,0 +1,17 @@
+{
+	"lokStav": {
+		"rychlostStupne": 14,
+		"rychlostKmph": 35,
+		"smer": 0,
+		"stavFunkci": "11000000000000000000000000000",
+		"stanovisteA": "S",
+		"najetoVpred": {
+			"metru": 1.3,
+			"bloku": 3491
+		},
+		"najetoVzad": {
+			"metru": 0,
+			"bloku": 1806
+		}
+	}
+}

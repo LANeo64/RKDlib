@@ -1,0 +1,12 @@
+=== Popis
+Toto je diagram tříd
+
+=== Model
+==== Traťové rozdělení
+include::Class_trat.adoc[]
+==== Pomocné typy
+include::Class_util.adoc[]
+==== Vozidla
+include::Class_train.adoc[]
+==== Engine
+include::Class_engine.adoc[]

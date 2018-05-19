@@ -1,0 +1,65 @@
+[plantuml, "Class-train", png]
+....
+'###############################################################################
+' definice tříd zde
+'###############################################################################
+
+class Vlak {
+	- m_adresa: int
+	- m_nazev: string
+	- m_majitel: string
+	- m_oznaceni: string
+	- m_poznamka: string
+	- m_trida: LokoClass
+	- m_funkce_nazev: std::map<FuncKey,string>
+	- m_stav: VlakStav*
+	+ Vlak(add: int, nazev: string, majitel: string, oznaceni: string, trida: string)
+	+ SetNote(note: string): void
+	+ SetStav(stav: VlakStav*): void
+	+ GetStav(): VlakStav*
+	+ SetFuncName(key: FuncKey, name: string): void
+	+ GetFuncName(key: FuncKey): string
+	+ GetAddress(): int
+}
+
+class VlakStav {
+	- m_rychlostStupne: int
+	- m_rychlostKmph: int
+	-	m_smer: bool
+	- m_stavFunkci: bool[29]
+	- m_stanoviste: string
+	- m_najetoVpred: Najeto
+	- m_najetoVzad: Najeto
+	+ VlakStav(spdD, spdK: int, smer: bool, stanoviste: string)
+	+ SetNajetoVpred(metry, bloky: int): void
+  + SetNajetoVzad(metry, bloky: int): void
+	+ SetFunction(key: int, value: bool): void
+	+ GetFunction(key: int): bool
+	+ GetSmer(): bool
+	+ SetSpeed(D,K: int): void
+	+ GetSpeedD(): int
+	+ GetSpeedK(): int
+}
+
+class Najeto {
+	+ Metry: double
+	+ Bloky: int
+}
+
+'###############################################################################
+' poznámky k třídám
+'###############################################################################
+
+note bottom of VlakStav
+	smer je true pro souhlasnou
+	orientaci, false protismernou
+end note
+
+note bottom of Najeto
+	toto je struct
+end note
+
+'###############################################################################
+' linky, asociace, agregace, kompozice a dědičnosti zde
+'###############################################################################
+....

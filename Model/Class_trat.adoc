@@ -1,0 +1,109 @@
+[plantuml, "Class-trat", png]
+....
+'scale 970 width
+left to right direction
+'###############################################################################
+' definice tříd zde
+'###############################################################################
+class TratovyObjekt{
+	- m_název: string
+	- m_id: int
+	- m_typ: TratovyTyp
+	+ TratovyObjekt(nazev: string, id: int, typ: string)
+	+ GetNazev(): string
+	+ GetId(): int
+	+ GetType(): TratovyTyp
+}
+
+class Vyhybka {
+	- m_input+: MTB
+  - m_input-: MTB
+  - m_output+: MTB
+  - m_output-: MTB
+	- m_usek: int
+	- m_spojka: int
+	- m_zamek: int
+	- m_zamekPoloha: ZamekVal
+	+ Vyhybka(nazev: string, id: int, typ: string, i+, i-, o+, o-: MTB, usek: int, spojka: int)
+  + Vyhybka(nazev: string, id: int, typ: string, i+, i-, o+, o-: MTB, usek: int, spojka: int, zamek: int, val: string)
+	+ PrepniA(): bool
+	+ PrepniB() :bool
+	+ Prepni(): bool
+	+ Stav(): bool
+}
+
+class Usek {
+	- m_mtb: std::vector<MTB>
+	- m_delka: int
+	- m_zesilovac: string
+	- m_stav: BlokStav*
+	+ Usek(nazev: string, id: int, typ: string, delka: int, zesilovac: string)
+	+ Usek(nazev: string, id: int, typ: string, delka: int, zesilovac: string, mtb: MTB)
+	+ Usek(nazev: string, id: int, typ: string, delka: int, zesilovac: string, sekce: int)
+	+ JeObsazen(): bool
+	+ JeObsazen( index: int ): bool
+	+ GetZesilovac(): string
+	+ GetDelka(): int
+	+ SetStav(stav: BlokStav*):void
+	+ GetStav(): BlokStav*
+	+ PridejSekci(mtb: MTB): void
+}
+
+class TratovyUsek {
+	- m_smyckaUsek: bool
+  + TratovyUsek(nazev: string, id: int, typ: string, delka: int, zesilovac: string)
+	+ TratovyUsek(nazev: string, id: int, typ: string, delka: int, zesilovac: string, mtb: MTB)
+	+ TratovyUsek(nazev: string, id: int, typ: string, delka: int, zesilovac: string, sekce: int)
+  + TratovyUsek(nazev: string, id: int, typ: string, delka: int, zesilovac: string, sekce: int, smycka: bool)
+	+ GetSmycka(): bool
+}
+
+class SCOM {
+	+ SCOM(nazev: string, id: int, typ: string)
+}
+
+class Zamek {
+	+ Zamek(nazev: string, id: int, typ: string)
+}
+
+class IR {
+	- m_mtb: MTB
+	+ IR(nazev: string, id: int, typ: string)
+	+ IR(nazev: string, id: int, typ: string, mtb: MTB)
+}
+
+class Rozpojovac {
+	+ Rozpojovac(nazev: string, id: int, typ: string)
+}
+
+class Trat {
+	+ Trat(nazev: string, id: int, typ: string)
+}
+
+class Uvazka {
+	+ Uvazka(nazev: string, id: int, typ: string)
+}
+
+'###############################################################################
+' poznámky k třídám
+'###############################################################################
+
+
+'###############################################################################
+' linky, asociace, agregace, kompozice a dědičnosti zde
+'###############################################################################
+
+TratovyObjekt <|-- Vyhybka
+TratovyObjekt <|-- Usek
+TratovyObjekt <|-[hidden]right-TratovyUsek
+TratovyObjekt <|-- SCOM
+TratovyObjekt <|-- Zamek
+TratovyObjekt <|-- IR
+TratovyObjekt <|-- Rozpojovac
+TratovyObjekt <|-- Trat
+TratovyObjekt <|-- Uvazka
+
+Usek <|-up- TratovyUsek
+
+
+....

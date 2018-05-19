@@ -1,0 +1,13 @@
+# Strip .php from the URL if it's requested
+RewriteEngine on
+#RewriteCond %{THE_REQUEST} \\.php
+#RewriteRule index.php prp.php
+#RewriteRule ^(.*)\\.php$ http://www.example.org/$1 [L,R=permanent]
+
+# Make the '.php' be removed from all URL's
+#RewriteRule ^(\\w+)$ $1.php [L]
+
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteRule (.*) index.php?page=$1 [L]
+#RewriteRule (.*) $1.php [L]

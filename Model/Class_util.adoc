@@ -1,0 +1,89 @@
+[plantuml, "Class-util", png]
+....
+'###############################################################################
+' definice tříd zde
+'###############################################################################
+
+enum TratovyTyp {
+	vyhybka
+	usek
+  tratUsek
+  scom
+	zamek
+	ir
+	rozpojovac
+	trat
+	uvazka
+}
+
+enum ZamekVal {
+	positive
+	negative
+}
+
+enum LokoClass {
+	parni
+	diesel
+	motor
+	elektro
+}
+
+enum FuncKey {
+	F1
+	F2
+	F3
+	F4
+	F5
+	F6
+	F7
+	F8
+	F9
+	F10
+	F11
+	F12
+	F13
+}
+
+class MTB {
+	- m_board: int
+	- m_port: int
+	+ MTB()
+  + MTB(board: int, port: int)
+	+ operator=(arg: MTB&): MTB&
+	+ Board(int):int
+	+ Port(int):int
+	+ Read(): int
+	+ Write(value: int): void
+}
+
+class BlokStav {
+	- m_stav: bool
+	- m_sekce: std::vector<bool>
+	- m_napajeni: bool
+	- m_zkrat: bool
+	- m_dcc: bool
+	- m_soupravy: std::vector<string>
+	+ BlokStav(stav: bool, napajeni: bool, zkrat: bool, dcc: bool)
+  + BlokStav(stav: bool, napajeni: bool, zkrat: bool, dcc: bool, sekce: int)
+	+ SetSekce(key: int, val: bool): void
+	+ GetSekce(key: int): bool
+	+ GetStav(): bool
+	+ SetStav(val: bool): void
+	+ AddSouprava(souprava: string): void
+	+ RemSouprava(key: int): void
+	+ RemSouprava(name: string): void
+}
+
+'###############################################################################
+' poznámky k třídám
+'###############################################################################
+
+note bottom of ZamekVal
+	hodnota v json je
+	typu "+" a "-"
+end note
+
+'###############################################################################
+' linky, asociace, agregace, kompozice a dědičnosti zde
+'###############################################################################
+....

@@ -30,6 +30,8 @@
 *.exe
 *.out
 *.app
+
+# LANeo@CanOfGarbage gitignore
 Code/nbproject/project.xml
 Code/nbproject/private/private.xml
 Code/nbproject/private/launcher.properties
@@ -41,7 +43,19 @@ Code/nbproject/Package-Debug.bash
 Code/nbproject/Makefile-variables.mk
 Code/nbproject/Makefile-Release.mk
 Code/nbproject/Makefile-Debug.mk
-Code/Makefile
 Code/nbproject/private/configurations.xml
 Code/nbproject/private/c_standard_headers_indexer.c
 Code/nbproject/Makefile-impl.mk
+
+# basic netbeans gitignore
+Code/nbproject/private/
+Code/nbproject/
+Code/build/
+Code/nbbuild/
+Code/dist/
+Code/nbdist/
+Code/.nb-gradle/
+Code/.dep.inc
+Code/MakeFile
+
+RKDdummyServer/nbproject/
