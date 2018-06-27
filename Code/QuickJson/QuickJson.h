@@ -6,6 +6,8 @@
 #include <sstream>
 #include <ctime>
 
+#include "QuickJsonParser.h"
+
 //#include "mbed.h"
 
 class QuickJson {
@@ -43,6 +45,7 @@ public:
     bool addField( std::string, const char* );
     bool addField( const char* );
     
+    QuickJson* addNode();
     QuickJson* addNode( std::string );
     QuickJson* getChild( std::string );
     std::vector<QuickJson*> getChildren();

@@ -26,9 +26,9 @@ int main(int argc, char** argv) {
     std::ostringstream os;
     curlpp::options::WriteStream ws(&os);
     curlpp::options::Port myPort(5823);
-    
+
     QuickJson* json;
-    
+
     try {
         // That's all that is needed to do cleanup of used resources (RAII style).
         curlpp::Cleanup myCleanup;
@@ -46,8 +46,8 @@ int main(int argc, char** argv) {
         myRequest.perform();
         std::cout << myRequest;
         os << myRequest;
-        json = new QuickJson::ParseString(os.str());
-        
+        json = QuickJson::ParseString(os.str());
+
         //std::cout << myRequest;
     } catch (curlpp::RuntimeError & e) {
         std::cout << e.what() << std::endl;
@@ -56,26 +56,26 @@ int main(int argc, char** argv) {
     }
     //std::cout << "krtek" << std::endl;
 
+/*
+    VlakStav* vl = new VlakStav(4, 50, true, "oranzova");
+    vl->printInfoConsole();
+    vl->setFunction(5, true);
+    vl->setFunction(8, true);
+    vl->setFunction(9, true);
+    vl->setFunction(10, true);
+    vl->setFunction(28, true);
+    vl->setNajetoVpred(15, 23);
+    vl->setNajetoVzad(4, 10);
+    vl->setSpeedKmph(8);
+    vl->setSpeedStupne(2);
+    vl->setSmer(false);
+    vl->printInfoConsole();
 
-VlakStav* vl = new VlakStav(4,50,true,"oranzova");
-	vl->printInfoConsole();
-	vl->setFunction(5, true);
-	vl->setFunction(8, true);
-	vl->setFunction(9, true);
-	vl->setFunction(10, true);
-	vl->setFunction(28, true);
-	vl->setNajetoVpred(15,23);
-	vl->setNajetoVzad(4,10);
-	vl->setSpeedKmph(8);
-	vl->setSpeedStupne(2);
-	vl->setSmer(false);
-	vl->printInfoConsole();
+    Vlak* vlacek = new Vlak(101110, "OS48501", "Ace", "nejake oznaceni", parni, vl);
+    vlacek->setPoznamka("slusuje");
+    vlacek->printConsole();
 
-	Vlak* vlacek = new Vlak(101110, "OS48501", "Ace", "nejake oznaceni", parni, vl);
-	vlacek->setPoznamka("slusuje");
-	vlacek->printConsole();
-
-
+*/
 
     return 0;
 }
