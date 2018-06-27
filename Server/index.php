@@ -1,33 +1,45 @@
 <?php
-function resolveURI($url){
+
+function resolveURI($url) {
     
 }
 
 if (isset($_GET["page"])) {
     $url = $_GET["page"];
-    if($url != ""){
+    if ($url != "") {
         $urlArray = explode('/', $url);
-        if($urlArray[0] == "lokStav"){
-            if($urlArray[1] != "" ){
-                $file = file_get_contents("./data/".$urlArray[1]);
+        //var_dump($urlArray);
+        if ($urlArray[0] == "lokStav") {
+            if ($urlArray[1] != "") {
+                $data = file_get_contents("./data/" . $urlArray[1]);
+            } else {
+                include_once "./default.php";
             }
-        } elseif( substr_compare ($urlArray[0], "loks", 0) >= 0 ) {
-            $file = file_get_contents("./data/".$urlArray[0]);
-        } elseif( $urlArray[0] == "blokStav" ) {
-            if($urlArray[1] != "" ){
-                $file = file_get_contents("./data/".$urlArray[1]);
+        } elseif (strpos($urlArray[0], "loks") !== false) {
+            $data = file_get_contents("./data/loks");
+        } elseif ($urlArray[0] == "blokStav") {
+            if ($urlArray[1] != "") {
+                $data = file_get_contents("./data/" . $urlArray[1]);
             }
-        } elseif( substr_compare ($urlArray[0], "bloky", 0) >= 0 ) {
-            $file = file_get_contents("./data/".$urlArray[0]);
+        } elseif (strpos($urlArray[0], "bloky") !== false) {
+            $data = file_get_contents("./data/bloky");
+        } else {
+            include_once "./default.php";
         }
-    }    
-    echo 'page is: "' . htmlspecialchars($_GET["page"]) . '"';
-    echo "\r\n";
-    //echo "\r\n \$POST:";
-    //var_dump($_POST);
-    echo "Data:";
-    echo "\r\n";
-    echo $file;
+    }
+    
+    if (isset($data)) {
+        //echo "Data:";
+        //echo "<br>";
+        //echo "<br>";
+        echo $data;
+    } else {
+        echo 'page is: "' . htmlspecialchars($_GET["page"]) . '"';
+        echo "<br>";
+        echo "<br>";
+        echo "<br> \$POST:";
+        var_dump($_POST);
+    }
 } else {
     include_once 'ServerInfo.php';
 }
