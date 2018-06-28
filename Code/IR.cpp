@@ -7,7 +7,7 @@
 
 #include "IR.h"
 
-IR::IR( ) {
+IR::IR( std::string name, int id, TratovyTyp typ, MTB* _mtb ) {
 }
 
 IR::IR( const IR& orig ) {

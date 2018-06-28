@@ -8,9 +8,11 @@
 #ifndef TRAT_H
 #define	TRAT_H
 
-class Trat {
+#include "TratovyObjekt.h"
+
+class Trat: public TratovyObjekt {
 public:
-    Trat( );
+    Trat( std::string name, int id, TratovyTyp typ );
     Trat( const Trat& orig );
     virtual ~Trat( );
 private:

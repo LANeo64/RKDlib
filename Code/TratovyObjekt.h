@@ -8,13 +8,24 @@
 #ifndef TRATOVYOBJEKT_H
 #define	TRATOVYOBJEKT_H
 
+#include <string>
+
+#include "TratovyTyp.hpp"
+
 class TratovyObjekt {
 public:
-    TratovyObjekt( );
+    TratovyObjekt( std::string name, int id, TratovyTyp typ );
     TratovyObjekt( const TratovyObjekt& orig );
     virtual ~TratovyObjekt( );
-private:
-
+    
+    std::string GetNazev();
+    int GetId();
+    TratovyTyp GetType();
+    
+protected:
+    std::string m_nazev;
+    int m_id;
+    TratovyTyp m_typ;
 };
 
 #endif	/* TRATOVYOBJEKT_H */

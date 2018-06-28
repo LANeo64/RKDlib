@@ -8,9 +8,11 @@
 #ifndef ROZPOJOVAC_H
 #define	ROZPOJOVAC_H
 
-class Rozpojovac {
+#include "TratovyObjekt.h"
+
+class Rozpojovac: public TratovyObjekt {
 public:
-    Rozpojovac( );
+    Rozpojovac( std::string name, int id, TratovyTyp typ );
     Rozpojovac( const Rozpojovac& orig );
     virtual ~Rozpojovac( );
 private:

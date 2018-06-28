@@ -8,13 +8,16 @@
 #ifndef ZAMEK_H
 #define	ZAMEK_H
 
-class Zamek {
+#include "TratovyObjekt.h"
+#include "ZamekVal.hpp"
+
+class Zamek: public TratovyObjekt {
 public:
     Zamek( );
     Zamek( const Zamek& orig );
     virtual ~Zamek( );
+        
 private:
-
 };
 
 #endif	/* ZAMEK_H */

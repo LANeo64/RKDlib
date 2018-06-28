@@ -6,15 +6,15 @@
 #define CODE_TRATOVYTYP_HPP
 
 enum TratovyTyp{
-    vyhybka,
-    usek,
-    tratUsek,
-    scom,
-    zamek,
-    ir,
-    rozpojovac,
-    trat,
-    uvazka
+    TYP_VYHYBKA,
+    TYP_USEK,
+    TYP_TRATUSEK,
+    TYP_SCOM,
+    TYP_ZAMEK,
+    TYP_IR,
+    TYP_ROZPOJOVAC,
+    TYP_TRAT,
+    TYP_UVAZKA
 };
 
 #endif //CODE_TRATOVYTYP_HPP

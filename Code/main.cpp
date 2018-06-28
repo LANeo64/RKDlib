@@ -40,7 +40,7 @@ int main(int argc, char** argv) {
         myRequest.setOpt(myPort);
 
         // Set the URL.
-        myRequest.setOpt<Url>("http://127.0.0.1/blokStav/150");
+        myRequest.setOpt<Url>("http://127.0.0.1/lokStav/4350");
 
         // Send request and get a result.
         // By default the result goes to standard output.

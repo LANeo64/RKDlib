@@ -16,3 +16,14 @@ TratovyObjekt::TratovyObjekt( const TratovyObjekt& orig ) {
 TratovyObjekt::~TratovyObjekt( ) {
 }
 
+std::string TratovyObjekt::GetNazev() {
+    
+}
+
+int TratovyObjekt::GetId() {
+    
+}
+
+TratovyTyp TratovyObjekt::GetType() {
+    
+}

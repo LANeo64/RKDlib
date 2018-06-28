@@ -8,9 +8,11 @@
 #ifndef UVAZKA_H
 #define	UVAZKA_H
 
-class Uvazka {
+#include "TratovyObjekt.h"
+
+class Uvazka: public TratovyObjekt {
 public:
-    Uvazka( );
+    Uvazka( std::string name, int id, TratovyTyp typ );
     Uvazka( const Uvazka& orig );
     virtual ~Uvazka( );
 private:

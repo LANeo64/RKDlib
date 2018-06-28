@@ -8,9 +8,11 @@
 #ifndef SCOM_H
 #define	SCOM_H
 
-class SCOM {
+#include "TratovyObjekt.h"
+
+class SCOM: public TratovyObjekt {
 public:
-    SCOM( );
+    SCOM( std::string name, int id, TratovyTyp typ );
     SCOM( const SCOM& orig );
     virtual ~SCOM( );
 private:
