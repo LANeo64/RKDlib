@@ -1,7 +1,7 @@
 /*
 Created by Ace_Liver, 2018.
 */
-#include "Vlak.h";
+#include "Vlak.h"
 
 Vlak::Vlak(int add, string nazev, string majitel, string oznaceni, LokoClass trida, VlakStav* stav)
 {

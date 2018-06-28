@@ -2,7 +2,7 @@
 Created by Ace_Liver, 2018.
 */
 
-#include "VlakStav.h";
+#include "VlakStav.h"
 
 
 VlakStav::VlakStav(int spdS, int spdK, bool smer, string stanoviste)

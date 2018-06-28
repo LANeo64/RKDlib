@@ -15,15 +15,18 @@ BlokStav::BlokStav(bool stav, bool napajeni, bool zkrat, bool dcc, int sekce) {
     m_napajeni = napajeni;
     m_zkrat = zkrat;
     m_dcc = dcc;
-    m_sekce = sekce;
+    for(int i=0; i< sekce; i++){
+        m_sekce.push_back(false);
+    }
+    //m_sekce = sekce;
 }
 
 void BlokStav::SetSekce(int key, bool val){
-    m_sekce.insert(m_sekce.begin() + key, val);
+    m_sekce.at(key) = val;
 }
 
 bool BlokStav::GetSekce(int key){
-    return m_sekce[key];
+    return m_sekce.at(key);
 }
 
 void BlokStav::SetStav(bool val){
@@ -34,14 +37,18 @@ bool BlokStav::GetStav(){
     return m_stav;
 }
 
-void BlokStav::AddSouprava(string souprava){
-    m_soupravy.insert(m_soupravy.begin(), souprava);
+void BlokStav::AddSouprava(std::string souprava){
+    m_soupravy.push_back(souprava);
 }
 
 void BlokStav::RemSouprava(int key){
     m_soupravy.erase(m_soupravy.begin() + key);
 }
 
-void BlokStav::RemSouprava(string name) {
-    //zatim neni hotova trida pro soupravu...
+void BlokStav::RemSouprava(std::string name) {
+    for(std::vector<std::string>::iterator it = m_soupravy.begin(); it != m_soupravy.end(); it++ ){
+        if((*it).compare(name)) {
+            m_soupravy.erase(it);
+        }
+    }
 }

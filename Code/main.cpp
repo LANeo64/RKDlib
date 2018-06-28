@@ -9,7 +9,7 @@
 #include "curlpp/Easy.hpp"
 #include "curlpp/Options.hpp"
 
-#include "QuickJson/QuickJson.h"
+#include "include/nlohmann/json.hpp"
 
 #include <cstdlib>
 #include <stdlib.h>
@@ -18,6 +18,7 @@
 
 using namespace std;
 using namespace curlpp::options;
+using json = nlohmann::json;
 
 /*
  * 
@@ -27,7 +28,7 @@ int main(int argc, char** argv) {
     curlpp::options::WriteStream ws(&os);
     curlpp::options::Port myPort(5823);
 
-    QuickJson* json;
+    json vlakjson;
 
     try {
         // That's all that is needed to do cleanup of used resources (RAII style).
@@ -39,14 +40,14 @@ int main(int argc, char** argv) {
         myRequest.setOpt(myPort);
 
         // Set the URL.
-        myRequest.setOpt<Url>("http://127.0.0.1/bloky");
+        myRequest.setOpt<Url>("http://127.0.0.1/blokStav/150");
 
         // Send request and get a result.
         // By default the result goes to standard output.
         myRequest.perform();
         std::cout << myRequest;
         os << myRequest;
-        json = QuickJson::ParseString(os.str());
+        vlakjson = json::parse(os.str());
 
         //std::cout << myRequest;
     } catch (curlpp::RuntimeError & e) {
@@ -54,7 +55,8 @@ int main(int argc, char** argv) {
     } catch (curlpp::LogicError & e) {
         std::cout << e.what() << std::endl;
     }
-    //std::cout << "krtek" << std::endl;
+    std::cout << "krtek" << std::endl;
+    std::cout << vlakjson.dump(4) << std::endl;
 
 /*
     VlakStav* vl = new VlakStav(4, 50, true, "oranzova");

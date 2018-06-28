@@ -5,8 +5,8 @@ Created by Ace_Liver, 2018.
 
 #ifndef VLAK_STAV_H
 #define VLAK_STAV_H
-#include "Includes.h";
-#include "Najeto.cpp";
+#include "Includes.h"
+#include "Najeto.cpp"
 
 class VlakStav
 {

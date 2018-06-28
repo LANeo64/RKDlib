@@ -302,5 +302,10 @@ QuickJson* QuickJson::ParseString( std::string str ) {
             }
         }
     }
-    return stack.front();
+    
+    if( parser->Done() && parser->Good() ){
+        return stack.front();
+    } else {
+        return NULL;
+    }
 }

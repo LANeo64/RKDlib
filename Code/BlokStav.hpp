@@ -5,17 +5,20 @@
 #ifndef CODE_BLOKSTAV_HPP
 #define CODE_BLOKSTAV_HPP
 
+#include <string>
+#include <vector>
+
 class BlokStav {
 public:
     BlokStav(bool stav, bool napajeni, bool zkrat, bool dcc);
     BlokStav(bool stav, bool napajeni, bool zkrat, bool dcc, int sekce);
-    SetSekce(int key, bool val);
-    GetSekce(int key);
-    SetStav(bool val);
-    GetStav();
-    AddSouprava(string souprava);
-    RemSouprava(int key);
-    RemSouprava(string name);
+    void SetSekce(int key, bool val);
+    bool GetSekce(int key);
+    void SetStav(bool val);
+    bool GetStav();
+    void AddSouprava(std::string souprava);
+    void RemSouprava(int key);
+    void RemSouprava(std::string name);
 
 private:
     bool m_stav;
@@ -23,7 +26,7 @@ private:
     bool m_napajeni;
     bool m_zkrat;
     bool m_dcc;
-    std::vector<string> m_soupravy;
+    std::vector<std::string> m_soupravy;
 };
 
 #endif //CODE_BLOKSTAV_HPP

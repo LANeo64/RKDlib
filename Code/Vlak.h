@@ -4,10 +4,10 @@
 
 #ifndef VLAK_H
 #define VLAK_H
-#include "Includes.h";
-#include "VlakStav.h";
-#include "LokoClass.h";
-#include "FuncKey.h";
+#include "Includes.h"
+#include "VlakStav.h"
+#include "LokoClass.hpp"
+#include "FuncKey.hpp"
 
 class Vlak 
 {
